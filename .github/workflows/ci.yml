@@ -1,69 +1,69 @@
-# name: Django CI
+name: Django CI
 
-# on:
-#   push:
-#     branches: [ "main", "develop" ]
-#   pull_request:
-#     branches: [ "main", "develop" ]
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
 
-# jobs:
-#   build:
+jobs:
+  build:
 
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#     services:
-#       postgres:
-#         image: postgres:17.2
-#         env:
-#           POSTGRES_DB: test_db
-#           POSTGRES_USER: postgres
-#           POSTGRES_PASSWORD: postgres
-#         ports:
-#           - 5432:5432
-#         options: >-
-#           --health-cmd pg_isready
-#           --health-interval 10s
-#           --health-timeout 5s
-#           --health-retries 5
+    services:
+      postgres:
+        image: postgres:17.2
+        env:
+          POSTGRES_DB: test_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
-#     strategy:
-#       max-parallel: 4
-#       matrix:
-#         python-version: [ "3.13" ]
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [ "3.13" ]
 
-#     steps:
-#       - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
       
-#       - name: Install uv
-#         uses: astral-sh/setup-uv@v5
-#         with:
-#           enable-cache: true
-#           cache-dependency-glob: "uv.lock"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
-#       - name: Set up Python ${{ matrix.python-version }}
-#         run: uv python install ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
 
-#       - name: Install Dependencies
-#         run: uv sync --all-extras --dev
+      - name: Install Dependencies
+        run: uv sync --all-extras --dev
 
-#       - name: Run Linter
-#         run: uv run ruff check .
+      - name: Run Linter
+        run: uv run ruff check .
       
-#       - name: Wait for Postgres
-#         run: sleep 10
+      - name: Wait for Postgres
+        run: sleep 10
 
-#       - name: Run Tests
-#         env:
-#           SECRET_KEY: "django-insecure-test-key"
-#           DEBUG: "1"
-#           ALLOWED_HOSTS: "localhost 127.0.0.1"
-#           CORS_ALLOW_ORIGIN: "http://localhost:3000"
-#           CSRF_TRUSTED_ORIGINS: "http://localhost:3000"
-#           SQL_ENGINE: "django.db.backends.postgresql"
-#           POSTGRES_DB: "test_db"
-#           POSTGRES_USER: "postgres"
-#           POSTGRES_PASSWORD: "postgres"
-#           POSTGRES_HOST: "127.0.0.1"
-#           POSTGRES_PORT: "5432"
-#         run: |
-#           uv run pytest
+      - name: Run Tests
+        env:
+          SECRET_KEY: "django-insecure-test-key"
+          DEBUG: "1"
+          ALLOWED_HOSTS: "localhost 127.0.0.1"
+          CORS_ALLOW_ORIGIN: "http://localhost:3000"
+          CSRF_TRUSTED_ORIGINS: "http://localhost:3000"
+          SQL_ENGINE: "django.db.backends.postgresql"
+          POSTGRES_DB: "test_db"
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "postgres"
+          POSTGRES_HOST: "127.0.0.1"
+          POSTGRES_PORT: "5432"
+        run: |
+          uv run pytest
