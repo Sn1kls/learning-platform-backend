@@ -1,7 +1,7 @@
 [project]
-name = "sw-ua-back"
+name = "learning-platform-backend"
 version = "1.16.0"
-description = "SW-UA Back"
+description = "Learning Platform Backend"
 readme = "README.md"
 requires-python = ">=3.13.7"
 dependencies = [

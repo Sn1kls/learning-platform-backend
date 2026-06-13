@@ -943,8 +943,8 @@ msgid "Reset your password"
 msgstr "Скиньте свій пароль"
 
 #: apps/users/utils.py:263
-msgid "Your SOULVIA chat invitation"
-msgstr "Ваше запрошення в чат SOULVIA"
+msgid "Your Learning Platform chat invitation"
+msgstr "Ваше запрошення в чат Learning Platform"
 
 #: config/settings.py:154
 msgid "English"
@@ -1000,10 +1000,10 @@ msgstr "Привіт, %(first_name)s"
 
 #: templates/emails/chat_invitation_email.html:31
 msgid ""
-"Your account is now active. Join your SOULVIA chat group using the "
+"Your account is now active. Join your Learning Platform chat group using the "
 "invitation below."
 msgstr ""
-"Ваш акаунт тепер активний. Приєднуйтесь до вашої групи чату SOULVIA, "
+"Ваш акаунт тепер активний. Приєднуйтесь до вашої групи чату Learning Platform, "
 "використовуючи запрошення нижче."
 
 #: templates/emails/chat_invitation_email.html:42
@@ -1011,8 +1011,8 @@ msgid "Join your group chat"
 msgstr "Приєднатися до вашого групового чату"
 
 #: templates/emails/chat_invitation_email.html:50
-msgid "You can also join the main SOULVIA channel:"
-msgstr "Ви також можете приєднатися до основного каналу SOULVIA:"
+msgid "You can also join the main Learning Platform channel:"
+msgstr "Ви також можете приєднатися до основного каналу Learning Platform:"
 
 #: templates/emails/chat_invitation_email.html:66
 msgid "If this email reached you by mistake, you can ignore it."

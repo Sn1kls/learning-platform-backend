@@ -260,7 +260,7 @@ def send_reset_password_email(
 
 def send_chat_invitation_email(
     user: "User | AbstractBaseUser",
-    email_title: str = _("Your SOULVIA chat invitation"),
+    email_title: str = _("Your Learning Platform chat invitation"),
 ) -> bool:
     try:
         logger.info(f"Trying to send chat invitation email for user {user.email}.")

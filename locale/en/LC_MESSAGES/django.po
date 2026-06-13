@@ -950,7 +950,7 @@ msgid "Reset your password"
 msgstr ""
 
 #: apps/users/utils.py:263
-msgid "Your SOULVIA chat invitation"
+msgid "Your Learning Platform chat invitation"
 msgstr ""
 
 #: config/settings.py:154
@@ -1004,7 +1004,7 @@ msgstr ""
 
 #: templates/emails/chat_invitation_email.html:31
 msgid ""
-"Your account is now active. Join your SOULVIA chat group using the "
+"Your account is now active. Join your Learning Platform chat group using the "
 "invitation below."
 msgstr ""
 
@@ -1013,7 +1013,7 @@ msgid "Join your group chat"
 msgstr ""
 
 #: templates/emails/chat_invitation_email.html:50
-msgid "You can also join the main SOULVIA channel:"
+msgid "You can also join the main Learning Platform channel:"
 msgstr ""
 
 #: templates/emails/chat_invitation_email.html:66

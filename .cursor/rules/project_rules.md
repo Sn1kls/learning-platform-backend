@@ -1,8 +1,8 @@
 ---
-description: Comprehensive rules for working on the sw-ua-back project.
+description: Comprehensive rules for working on the learning-platform-backend project.
 globs: "**/*.py", "**/*.html", "Makefile", "docker-compose*.yaml"
 ---
-# Project Rules: sw-ua-back
+# Project Rules: learning-platform-backend
 
 ## Tech Stack
 - **Language**: Python 3.13+
